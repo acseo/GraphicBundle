@@ -1,0 +1,29 @@
+$.plot($("{{domSelector}}"), [{
+    data: {{ data|json_encode|raw }},
+    {% for index, data in options.data %}
+    {{ index }} : {{ data | json_encode | raw }},
+    {% endfor %}
+    }], 
+    {{ options.options| json_encode | raw }}
+);
+
+
+            $("{{domSelector}}").bind("plothover", function(i, o, t) {
+                if (t) {
+                    if (a !== t.dataIndex) {
+                        a = t.dataIndex, $("#chart-tooltip").remove();
+                        var l = (t.datapoint[0], t.datapoint[1]),
+                            //f = t.series.xaxis.options.ticks[t.dataIndex][1];
+                            f = "f";
+                        s = "<strong>" + l + "</strong>";
+                        $('<div id="chart-tooltip" class="chart-tooltip">' + s + "</div>").appendTo("body");
+
+                        $("#chart-tooltip").show();
+                        console.log($("#chart-tooltip").width());
+                        $("#chart-tooltip").css({
+                            top: t.pageY  -50  ,
+                            left: t.pageX - ($("#chart-tooltip").width() )
+                        })
+                    }
+                } else $("#chart-tooltip").remove(), a = null
+            })

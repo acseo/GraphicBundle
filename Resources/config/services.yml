@@ -1,0 +1,4 @@
+services:
+#    my_overview_stats.example:
+#        class: MyOverview\StatsBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

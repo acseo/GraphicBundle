@@ -1,0 +1,4 @@
+$.plot($("{{domSelector}}"),
+    {{ data|json_encode|raw }},
+    {{ options.options| json_encode | raw }}
+);

@@ -1,0 +1,30 @@
+{
+    "name": "acseo/graphic-bundle",
+    "type": "symfony-bundle",
+    "description": "Bundle used to generate graphics easyly. Can use diffrent provides, such as jquery flot",
+    "keywords": ["Symfony", "graphic", "plot", "chart"],
+    "homepage": "https://github.com/acseo/GraphicBundle",
+    "authors": [
+        {
+            "name": "Nicolas Potier",
+            "email": "Nicolas.Potier@acseo-conseil.fr"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/symfony": ">=2.0.0"
+    },
+    "suggest": {
+
+    },
+    "autoload": {
+        "psr-0": { "ACSEO\\GraphicBundle": "" }
+    },
+    "target-dir": "ACSEO/GraphicBundle",
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.3-dev"
+        }
+    }
+}
