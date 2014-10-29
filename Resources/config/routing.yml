@@ -1,3 +1,0 @@
-my_overview_stats_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: MyOverviewStatsBundle:Default:index }
