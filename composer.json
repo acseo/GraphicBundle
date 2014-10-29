@@ -18,7 +18,7 @@
 
     },
     "autoload": {
-        "psr-0": { "ACSEO\\Bundle\GraphicBundle": "" }
+        "psr-0": { "ACSEO\\Bundle\\GraphicBundle": "" }
     },
     "target-dir": "ACSEO/Bundle/GraphicBundle",
     "minimum-stability": "dev",
