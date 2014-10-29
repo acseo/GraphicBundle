@@ -57,22 +57,22 @@ class MyController extends Controller
     {
         // Construct data and timeline chart
         $followers = array(
-			array("01/01/2014", 3),
-			array("02/01/2014", 18),
-			array("03/01/2014", 56),
-			array("03/01/2014", 60)
-		);
+            array(strtotime("01/01/2014") * 1000, 3),
+            array(strtotime("02/01/2014") * 1000, 18),
+            array(strtotime("03/01/2014") * 1000, 56),
+            array(strtotime("04/01/2014") * 1000, 60)
+        );
         $timeline = new TimeLine("#domIdFollowers", $followers); 
 
-		// Construct data and pie chart
+        // Construct data and pie chart
         $cities = array(
-            (object) array("label" => "Marseille", 100),
-			(object) array("label" => "Lyon",       50),
-			(object) array("label" => "Paris",       1),
+            (object) array("label" => "Marseille", "data" => 100),
+            (object) array("label" => "Lyon",      "data" => 50),
+            (object) array("label" => "Paris",     "data" =>  1),
         );
         $pie = new Pie("#cities", $cities); 
-        
-        return $this->render('MyProjectMyBundle:MyController:index.html.twig', array(
+
+        return $this->render('MyProjectMyBundle:Default:index.html.twig', array(
                 'timeline' => $timeline,
                 'pie' => $pie
         ));
@@ -84,21 +84,25 @@ Once you have created the graphs in your Controller, the hardest is done. Simply
 {# MyBundle:MyController:index.html.twig #}
 <html>
     <head>
-		<!-- include jQuery and jQuery Flot Javascript form CDN or from your project -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.min.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.pie.min.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.time.min.js"></script>
+        <!-- include jQuery and jQuery Flot Javascript form CDN or from your project -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.pie.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.time.min.js"></script>
 
-	    <script type="text/javascript">
-	    	{{ flot_graph(timeline) }}
-	    	{{ flot_graph(pie) }}
-	    </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                {{ flot_graph(timeline) }}
+                {{ flot_graph(pie) }}
+            });
+        </script>
     </head>
-	<body>
-		<div id="#domIdFollowers"></div>
-		<div id="#cities"></div>
-	</body>
+    <body>
+        <!-- remember to give width and height to your graph containers -->
+        <div id="domIdFollowers" style="width:100%;height:50%"></div>
+        <div id="cities" style="width:100%;height:50%"></div>
+    </body>
+</html>
 ```
 ## TODO
 
