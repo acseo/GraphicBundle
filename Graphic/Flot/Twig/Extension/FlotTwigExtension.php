@@ -23,7 +23,7 @@ class FlotTwigExtension extends \Twig_Extension {
      * @param string $string
      * @return int
      */
-    public function flotGraph (\Twig_Environment $twig, \ACSEO\Bundle\GrapicBundle\Graphic\Flot\Type\AbstractType $graph) {
+    public function flotGraph (\Twig_Environment $twig, \ACSEO\Bundle\GraphicBundle\Graphic\Flot\Type\AbstractType $graph) {
         return $twig->render('ACSEOGraphicBundle:Graphic\Flot:'.strtolower((new \ReflectionClass($graph))->getShortName()).'.html.twig', $graph->getView());
     }
 

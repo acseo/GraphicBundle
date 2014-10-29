@@ -1,6 +1,6 @@
 <?php
 
-namespace ACSEO\Bundle\GrapicBundle\Graphic\Flot\Type;
+namespace ACSEO\Bundle\GraphicBundle\Graphic\Flot\Type;
 
 abstract class AbstractType
 {
