@@ -1,6 +1,6 @@
 <?php
 
-namespace ACSEO\Bundle\GraphicBundle\Flot\Twig\Extension;
+namespace ACSEO\Bundle\GraphicBundle\Graphic\Flot\Twig\Extension;
 
 use Symfony\Component\HttpKernel\KernelInterface;
 
