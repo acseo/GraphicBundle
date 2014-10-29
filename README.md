@@ -19,7 +19,7 @@ Add the bundle in your composer.json:
 Now tell composer to download the bundle by running the command:
 
 ```bash
-$ php composer.phar update acseo/fast-show-generator-bundle
+$ php composer.phar update acseo/graphic-bundle
 ```
 Composer will install the bundle to your project's ```vendor/ACSEO``` directory.
 
