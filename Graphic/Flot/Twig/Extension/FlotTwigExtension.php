@@ -9,16 +9,16 @@ class FlotTwigExtension extends \Twig_Extension {
      * {@inheritdoc}
      */
     public function getFunctions() {
-        return array(
+        return [
             new \Twig_SimpleFunction(
                 'flot_graph',
                 [$this, 'flotGraph'],
                 [
-                    'is_safe' => array('html', 'js'),
+                    'is_safe' => ['html', 'js'],
                     'needs_environment' => true
                 ]
             ),
-        );
+        ];
     }
 
     /**
